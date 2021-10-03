@@ -30,7 +30,7 @@ function clearWrongBlocks() {
     blockOne[1].textContent = "";
     blockTwo[0].textContent = "";
     blockTwo[1].textContent = "";
-  }, 1000);
+  }, 500);
 }
 
 function updateTries() {
