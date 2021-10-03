@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+
+    <script defer src="script.js" type="module"></script>
+    <style>
+      .flex_container {
+        display: flex;
+        justify-content: center;
+      }
+
+      .flex_container > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: DodgerBlue;
+        color: white;
+        margin: 10px;
+        /*padding: 20px; */
+        font-size: 32px;
+        width: 100px;
+        height: 100px;
+      }
+
+      .no_click {
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex_container">
+      <h1>Family Memory Game</h1>
+    </div>
+    <div class="flex_container">
+      <p>
+       <h2> <span>HIGHSCORE: </span>
+        <span id="highscore"><h2>0</h2></span></h2>
+      </p>
+    </div>
+    <div class="flex_container">
+      <h3 style="color:red;"><span>Your Tries: </span><span id="tries">0</span></h3>
+    </div>
+    <div class="flex_container">
+      <h2 id="message"></h2>
+    </div>
+
+    <div id="container">
+      <div id="row_1" class="flex_container">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+      </div>
+      <div id="row_2" class="flex_container">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+      </div>
+      <div id="row_3" class="flex_container">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+      </div>
+      <div id="row_4" class="flex_container">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+      </div>
+    </div>
+  </body>
+</html>
