@@ -40,7 +40,6 @@ function updateTries() {
 //#################################################################
 //<img src="1.jpg" />
 gameBoard.addEventListener("click", function (e) {
-  e.preventDefault();
   const currentBlock = e.target.closest(".block");
   const blockNumber = currentBlock.getAttribute("data-number");
 
