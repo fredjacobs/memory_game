@@ -10,15 +10,16 @@ const message = document.querySelector("#message");
 let triesText = document.querySelector("#tries");
 let highScoreText = document.querySelector("#highscore");
 let highscore = +localStorage.getItem("highscore");
+const startBtn = document.querySelector("#start--btn");
+
+newGame.shuffleBlocks();
+newGame.assignBlocks();
 
 if (highscore) {
   highScoreText.innerText = highscore;
 } else {
   highScoreText.innerText = "0";
 }
-
-newGame.shuffleBlocks();
-newGame.assignBlocks();
 
 function clearWrongBlocks() {
   //Targetting the first occurance AND the second
@@ -38,15 +39,9 @@ function updateTries() {
 }
 
 //#################################################################
-//<img src="1.jpg" />
+
 gameBoard.addEventListener("click", function (e) {
   const currentBlock = e.target.closest(".block");
-  const blockNumber = currentBlock.getAttribute("data-number");
-
-  /* current.innerHTML =
-    current.innerHTML === "" ? current.getAttribute("data-number") : ""; */
-  /* currentBlock.innerHTML =
-    currentBlock.innerHTML === "" ? `<img src="${blockNumber}.jpg" />` : ""; */
 
   currentBlock.querySelector("img").classList.toggle("hide");
 
@@ -86,4 +81,8 @@ gameBoard.addEventListener("click", function (e) {
     tries++;
     updateTries();
   }
+});
+
+startBtn.addEventListener("click", function () {
+  location.reload();
 });
