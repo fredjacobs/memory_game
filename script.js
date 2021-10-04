@@ -30,10 +30,6 @@ function clearWrongBlocks() {
     blockOne[1].querySelector("img").classList.add("hide");
     blockTwo[0].querySelector("img").classList.add("hide");
     blockTwo[1].querySelector("img").classList.add("hide");
-    /* blockOne[0].textContent = "";
-    blockOne[1].textContent = "";
-    blockTwo[0].textContent = "";
-    blockTwo[1].textContent = ""; */
   }, 500);
 }
 
@@ -77,7 +73,7 @@ gameBoard.addEventListener("click", function (e) {
     if (correct === winNumber) {
       message.innerText = "Congrats! You Win!";
 
-      if (highscore > tries) {
+      if (highscore < tries) {
         localStorage.removeItem("highscore");
         localStorage.setItem("highscore", tries);
         message.innerText = "Congrats! A new record!";
