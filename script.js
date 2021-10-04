@@ -19,6 +19,7 @@ if (highscore) {
   highScoreText.innerText = highscore;
 } else {
   highScoreText.innerText = "0";
+  localStorage.setItem("highscore", 100);
 }
 
 function clearWrongBlocks() {
@@ -68,10 +69,11 @@ gameBoard.addEventListener("click", function (e) {
     if (correct === winNumber) {
       message.innerText = "Congrats! You Win!";
 
-      if (highscore < tries) {
+      if (highscore > tries) {
         localStorage.removeItem("highscore");
         localStorage.setItem("highscore", tries);
         message.innerText = "Congrats! A new record!";
+      } else {
       }
     }
   }
