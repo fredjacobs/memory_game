@@ -26,10 +26,14 @@ function clearWrongBlocks() {
   const blockTwo = document.querySelectorAll(`[data-number~="${clicks[1]}"]`);
 
   setTimeout(function () {
-    blockOne[0].textContent = "";
+    blockOne[0].querySelector("img").classList.add("hide");
+    blockOne[1].querySelector("img").classList.add("hide");
+    blockTwo[0].querySelector("img").classList.add("hide");
+    blockTwo[1].querySelector("img").classList.add("hide");
+    /* blockOne[0].textContent = "";
     blockOne[1].textContent = "";
     blockTwo[0].textContent = "";
-    blockTwo[1].textContent = "";
+    blockTwo[1].textContent = ""; */
   }, 500);
 }
 
@@ -45,8 +49,10 @@ gameBoard.addEventListener("click", function (e) {
 
   /* current.innerHTML =
     current.innerHTML === "" ? current.getAttribute("data-number") : ""; */
-  currentBlock.innerHTML =
-    currentBlock.innerHTML === "" ? `<img src="${blockNumber}.jpg" />` : "";
+  /* currentBlock.innerHTML =
+    currentBlock.innerHTML === "" ? `<img src="${blockNumber}.jpg" />` : ""; */
+
+  currentBlock.querySelector("img").classList.toggle("hide");
 
   clicks.push(currentBlock.getAttribute("data-number"));
 

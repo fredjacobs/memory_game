@@ -16,13 +16,17 @@ class GameView {
   assignBlocks() {
     for (let i = 0; i < this.rowOne.length; i++) {
       //this.rowOne[i] = this.list[i];
-      //rowOne[i].innerHTML = list[i];
+      this.rowOne[
+        i
+      ].innerHTML = `<img class="hide" src="${this.list[i]}.jpg" />`;
       this.rowOne[i].setAttribute("data-number", this.list[i]);
     }
 
     for (let j = this.rowLength, i = 0; j < 8; j++, i++) {
       //this.rowTwo[i] = list[j];
-      //rowTwo[i].innerHTML = list[j];
+      this.rowTwo[
+        i
+      ].innerHTML = `<img class="hide" src="${this.list[j]}.jpg" />`;
       this.rowTwo[i].setAttribute("data-number", this.list[j]);
     }
 
@@ -32,13 +36,17 @@ class GameView {
       j++, i++
     ) {
       //this.rowThree[i] = this.list[j];
-      //rowThree[i].innerHTML = list[j];
+      this.rowThree[
+        i
+      ].innerHTML = `<img class="hide" src="${this.list[j]}.jpg" />`;
       this.rowThree[i].setAttribute("data-number", this.list[j]);
     }
 
     for (let j = this.rowLength * 3, i = 0; j < this.list.length; j++, i++) {
       //this.rowFour[i] = this.list[j];
-      //rowFour[i].innerHTML = list[j];
+      this.rowFour[
+        i
+      ].innerHTML = `<img class="hide" src="${this.list[j]}.jpg" />`;
       this.rowFour[i].setAttribute("data-number", this.list[j]);
     }
   }
